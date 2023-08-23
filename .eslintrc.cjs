@@ -15,9 +15,13 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
+    
    },
   plugins: ['react-refresh'],
   rules: {
+    "@typescript-eslint/no-unused-vars": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types":"off",
     'react-refresh/only-export-components': [
