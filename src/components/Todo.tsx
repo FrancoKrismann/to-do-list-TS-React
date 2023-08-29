@@ -1,18 +1,20 @@
-import {type TodoSuccess, type TodoId, type Todo as TodoType } from "../types"
+import {type TodoSuccess, type TodoId  } from "../types/types"
+import {type Todo as TodoType} from "../interface/interface"
+import { useCallback } from "react";
 
 interface Props extends TodoType {
     onRemoveTodo: ({ id }:TodoId) => void;
     onToggleCompleteTodo : ({ id, completed }:TodoSuccess) => void;
 }
 
-export const Todo:React.FC<Props> = ({id,title,completed, onRemoveTodo, onToggleCompleteTodo}) => {
+export  const Todo:React.FC<Props> = ({id,title,completed, onRemoveTodo, onToggleCompleteTodo}) => {
     
-    const handleChangeCheckbox = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleChangeCheckbox = useCallback((event: React.ChangeEvent<HTMLInputElement>): void => {
         onToggleCompleteTodo({
             id,
             completed: event.target.checked
         })
-    }
+    },[id, onToggleCompleteTodo])
 
     return (
         <div>

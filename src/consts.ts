@@ -1,8 +1,12 @@
+import { FilterButtons } from "./types/types";
+
 export const TODO_FILTERS = {
     ALL: 'all',
     ACTIVE:"active",
     COMPLETED:"completed",
 } as const
+
+
 
 export const FILTER_BUTTONS = {
     [TODO_FILTERS.ALL]: {
@@ -19,3 +23,5 @@ export const FILTER_BUTTONS = {
     },
     
 } as const
+
+export const typedFilterButtons: FilterButtons = FILTER_BUTTONS;
