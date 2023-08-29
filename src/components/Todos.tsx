@@ -1,4 +1,4 @@
-import { ListOfTodos, type TodoSuccess, type TodoId } from "../types"
+import { ListOfTodos, type TodoSuccess, type TodoId } from "../types/types"
 import { Todo } from "./Todo"
 
 interface Props {
@@ -8,6 +8,8 @@ interface Props {
 }
 
 export const Todos:React.FC<Props> = ({todos, onRemoveTodo, onToggleComplete}) => {
+    console.log("Renderizado Todos");
+    
     return (
         <ul className="todo-list">
             {todos.map(todo => (

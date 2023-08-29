@@ -1,4 +1,4 @@
-import { type TodoTitle } from "../types"
+import { type TodoTitle } from "../types/types"
 import { CreateTodo } from "./CreateTodo"
 
 

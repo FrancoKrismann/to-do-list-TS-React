@@ -1,5 +1,5 @@
-import { FILTER_BUTTONS } from "../consts";
-import { type FilterValue } from "../types";
+import { typedFilterButtons } from "../consts";
+import { type FilterValue } from "../types/types";
 
 interface Props {
   onFilterChange:(filter: FilterValue) => void;
@@ -11,14 +11,11 @@ export const Filters: React.FC<Props> = ({
   onFilterChange,
 }) => {
 
-  // const handleClick = (filter: FilterValue) => {
-
-  // }
 
   return (
     <ul className="filters">
       {
-        Object.entries(FILTER_BUTTONS).map(([key, {href, literal}]) => {
+        Object.entries(typedFilterButtons).map(([key, {href, literal}]) => {
           const isSelected = key === filterSelected
           const className = isSelected ? `selected` : ``
           return (
