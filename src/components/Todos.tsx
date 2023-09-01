@@ -1,13 +1,14 @@
 import { ListOfTodos, type TodoSuccess, type TodoId } from "../types/types"
 import { Todo } from "./Todo"
 
-interface Props {
+//Buena practica Typescript syntax
+type Props = Readonly< {
     todos: ListOfTodos
     onRemoveTodo: ({ id }:TodoId) => void
     onToggleComplete : ({ id, completed }:TodoSuccess) => void
-}
+}>
 
-export const Todos:React.FC<Props> = ({todos, onRemoveTodo, onToggleComplete}) => {
+export const Todos = ({todos, onRemoveTodo, onToggleComplete}:Props) => {
     console.log("Renderizado Todos");
     
     return (
