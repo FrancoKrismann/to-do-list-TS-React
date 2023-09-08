@@ -16,6 +16,8 @@ export  const Todo:React.FC<Props> = ({id,title,completed, onRemoveTodo, onToggl
         })
     },[id, onToggleCompleteTodo])
 
+    console.log("title",title);
+    
     return (
         <div>
             <input

@@ -9,7 +9,7 @@ type Props = Readonly< {
 }>
 
 export const Todos = ({todos, onRemoveTodo, onToggleComplete}:Props) => {
-    console.log("Renderizado Todos");
+    console.log("todos",todos);
     
     return (
         <ul className="todo-list">
